@@ -17,6 +17,7 @@ package Pages;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
@@ -61,14 +62,14 @@ public class NavigationPage extends BasePage{
             counter++;
             if (counter == TRIES)
                 return;
-            categoryElements = driver.findElementsById("com.amazonaws.devicefarm.android.referenceapp:id/drawer_row_title");
+            categoryElements = driver.findElements(By.id("com.amazonaws.devicefarm.android.referenceapp:id/drawer_row_title"));
             for (WebElement categoryTitleElement: categoryElements){
                 String titleText = categoryTitleElement.getText();
                 if (titleText.equalsIgnoreCase(categoryName)) categoryElement = categoryTitleElement;
 
             }
             if (categoryElement == null) {
-                driver.scrollTo(categoryName);
+//                driver.scrollTo(categoryName);
             }
         }
 

@@ -48,7 +48,7 @@ public abstract class BasePage {
      */
     protected BasePage(AppiumDriver driver){
         this.driver = driver;
-        PageFactory.initElements(new AppiumFieldDecorator(driver, 5, TimeUnit.SECONDS), this);
+//        PageFactory.initElements(new AppiumFieldDecorator(driver, 5, TimeUnit.SECONDS), this);
     }
 
     /**

@@ -15,12 +15,11 @@
 
 package Tests.AbstractBaseTests;
 
-import cucumber.api.testng.AbstractTestNGCucumberTests;
-
 import Pages.NavigationPage;
-import io.appium.java_client.MobileElement;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.annotations.*;
 
 import java.net.MalformedURLException;
@@ -37,7 +36,7 @@ public abstract class TestBase extends AbstractTestNGCucumberTests {
      * Make the driver static. This allows it to be created only once
      * and used across all of the test classes.
      */
-    public static AndroidDriver<MobileElement> driver;
+    public static AndroidDriver driver;
 
     /**
      * This allows the navigation to work within the app.
@@ -88,7 +87,7 @@ public abstract class TestBase extends AbstractTestNGCucumberTests {
         capabilities.setCapability("appActivity", "com.amazonaws.devicefarm.android.referenceapp.Activities.MainActivity");
         capabilities.setCapability("udid", "emulator-5554");
 
-        driver = new AndroidDriver<MobileElement>(url, capabilities);
+        driver = new AndroidDriver(url, capabilities);
 
         //Use a higher value if your mobile elements take time to show up
         driver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);
@@ -120,6 +119,6 @@ public abstract class TestBase extends AbstractTestNGCucumberTests {
      */
     @AfterClass
     public void restartApp() {
-        driver.resetApp();
+        driver.resetInputState();
     }
 }

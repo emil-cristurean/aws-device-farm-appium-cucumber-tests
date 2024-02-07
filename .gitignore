@@ -1,0 +1,41 @@
+# Userspecific stuff
+
+.idea/**
+
+# Gradle
+.idea/**/gradle.xml
+.idea/**/libraries
+
+.idea/modules.xml
+.idea/*.iml
+.idea/modules
+*.iml
+*.ipr
+
+# IntelliJ
+out/
+target/
+
+# mpeltonen/sbtidea plugin
+.idea_modules/
+
+# Editorbased Rest Client
+.idea/httpRequests
+
+# Android studio 3.1+ serialized cache file
+.idea/caches/build_file_checksums.ser
+
+### Intellij Patch ###
+# Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment215987721
+
+### VisualStudioCode ###
+.vscode/*
+**/bin
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
+### Gradle ###
+.gradle
+build/

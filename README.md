@@ -7,3 +7,11 @@ Instructions to package and run this test can be found [here.](https://aws.amazo
 ## License
 
 This library is licensed under the Apache 2.0 License. 
+
+## maven version
+
+./mvnw --version
+
+## run test
+
+./mvnw clean test

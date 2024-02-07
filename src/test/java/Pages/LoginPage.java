@@ -16,8 +16,9 @@
 package Pages;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.By;
+import org.openqa.selenium.remote.RemoteWebElement;
 
 /**
  * A login page
@@ -29,19 +30,19 @@ public class LoginPage extends BasePage {
      * The login button
      */
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/login_button")
-    private MobileElement loginButton;
+    private RemoteWebElement loginButton;
 
     /**
      * The user name input
      */
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/username_text_input")
-    private MobileElement usernameField;
+    private RemoteWebElement usernameField;
 
     /**
      * The password input
      */
     @AndroidFindBy(id = "com.amazonaws.devicefarm.android.referenceapp:id/password_text_input")
-    private MobileElement passwordField;
+    private RemoteWebElement passwordField;
 
     public LoginPage(AppiumDriver driver) {
         super(driver);
@@ -72,7 +73,7 @@ public class LoginPage extends BasePage {
      * @return the login message
      */
     public String getMessage() {
-        return driver.findElementById("Alt Message").getText();
+        return driver.findElement(By.id("Alt Message")).getText();
     }
 
     /**
@@ -88,6 +89,6 @@ public class LoginPage extends BasePage {
      * Presses the logout/try again button
      */
     public void pressAltButton() {
-        driver.findElementById("Alt Button").click();
+        driver.findElement(By.id("Alt Button")).click();
     }
 }
